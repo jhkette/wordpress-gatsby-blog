@@ -2,6 +2,8 @@ const _ = require(`lodash`);
 const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
+const createPaginatedPages = require('gatsby-paginate');
+
 
 const pageQuery = `
 {
@@ -23,11 +25,13 @@ const postsQuery = `
   allWordpressPost {
     edges {
       node {
-        id
+        id  
         slug
         status
         template
         format
+        title
+        date
       }
     }
   }
@@ -49,7 +53,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     reject(result.errors);
                 }
 
+               
                 const pageTemplate = path.resolve("./src/templates/page.js");
+
 
                 _.each(result.data.allWordpressPage.edges, edge => {
                     createPage({
@@ -71,6 +77,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                         }
                         const postTemplate = path.resolve("./src/templates/post.js");
 
+                      
+
+                        createPaginatedPages({
+                            edges: result.data.allWordpressPost.edges,
+                            createPage: createPage,
+                            pageTemplate: "src/templates/posts.js",
+                            pageLength: 3,
+                            pathPrefix: "posts"
+                        })
+        
+
                         _.each(result.data.allWordpressPost.edges, edge => {
                             createPage({
                                 path: `/post/${edge.node.slug}/`,
@@ -84,5 +101,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     });
             });
         // ==== END POSTS ====
+ 
+        
     });
 };
