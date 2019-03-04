@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import Menu from "./menu"
 
 import Header from "./header"
 import "./layout.css"
@@ -34,6 +35,7 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
+          <Menu />
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with
