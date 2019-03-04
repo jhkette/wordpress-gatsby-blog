@@ -13,6 +13,9 @@ class PostTemplate extends Component {
             <div>
                 <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                {post.acf !== null ?
+                <p dangerouslySetInnerHTML={{__html:post.acf.social }}></p>
+                : ''}
             </div>
             </Layout>
         )
@@ -27,7 +30,11 @@ export const pageQuery = graphql`
         wordpressPost(id: { eq: $id }) {
             title
             content
+            acf{
+                social
+              }
         }
+        
         site {
             siteMetadata {
                 title

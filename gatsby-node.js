@@ -14,6 +14,7 @@ const pageQuery = `
         slug
         status
         template
+       
       }
     }
   }
@@ -32,6 +33,10 @@ const postsQuery = `
         format
         title
         date
+        acf{
+            social
+          }
+          
       }
     }
   }
