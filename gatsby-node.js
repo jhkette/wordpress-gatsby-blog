@@ -36,6 +36,17 @@ const postsQuery = `
         acf{
             social
           }
+          featured_media{
+            localFile{
+                childImageSharp{
+                    resolutions(width:500, height: 200){
+                        src
+                        width
+                        height
+                    }
+                }
+            }
+        }
           
       }
     }

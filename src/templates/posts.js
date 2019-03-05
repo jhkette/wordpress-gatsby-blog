@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Link from "gatsby-link"
 import Layout from '../components/layout'
+import Img from "gatsby-image"
 
 const NavLink = props => {
     if (!props.test) {
@@ -28,7 +29,7 @@ const IndexPage = ({ data, pathContext }) => {
                     <Link to={'post/' + node.slug}>
                         <h3>{node.title}</h3>
                     </Link>
-
+                    <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions} />
                     <div className={"post-content"} dangerouslySetInnerHTML={{__html: node.excerpt}} />
 
                     {node.date}
