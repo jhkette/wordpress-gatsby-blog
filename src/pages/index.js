@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
+import FluidGrid from 'react-fluid-grid'
 import Layout from '../components/layout'
 
 

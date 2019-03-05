@@ -29,7 +29,12 @@ const IndexPage = ({ data, pathContext }) => {
                     <Link to={'post/' + node.slug}>
                         <h3>{node.title}</h3>
                     </Link>
-                    <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions} />
+                    {node.featured_media.localFile.childImageSharp.resolutions &&
+                        <div>
+                            <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions} />
+                        </div>
+                    }
+                    
                     <div className={"post-content"} dangerouslySetInnerHTML={{__html: node.excerpt}} />
 
                     {node.date}

@@ -22,6 +22,18 @@ section,
 summary {
   display: block;
 }
+.content{
+  width: 100%;
+  background-color: #ededed;
+  min-height: 100vh;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+  
+  padding: 0 3rem;
+}
 audio,
 canvas,
 progress,
