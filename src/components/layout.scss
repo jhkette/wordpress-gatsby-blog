@@ -1,3 +1,5 @@
+* { margin: 0; padding: 0 }
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -7,6 +9,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
+ 
 }
 article,
 aside,
@@ -22,18 +26,63 @@ section,
 summary {
   display: block;
 }
+
 .content{
   width: 100%;
-  background-color: #ededed;
+  background-color: #f4f4f4;
+ 
+}
+
+main{
+  width: 75%;
+ 
+}
+
+header{
+  width: 15rem;
   min-height: 100vh;
+ 
 }
 
 .container {
   width: 95%;
   margin: auto;
-  
-  padding: 0 3rem;
+  padding: 0 2rem;
+  border: 1px red;
 }
+
+.flex-main{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+  border: 1px red;
+}
+
+.bloglead{
+  &:hover{
+    opacity: .5;
+    transition-duration: .1s;
+
+
+  }
+  
+}
+
+.posts{
+ width: 90%;
+ border: 1px red;
+}
+
+.post{
+  width: 15rem;
+  margin: 3rem;
+  
+}
+
+
+
+
 audio,
 canvas,
 progress,

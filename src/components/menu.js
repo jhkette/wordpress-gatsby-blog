@@ -2,17 +2,19 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const Menu = () => (
-  <div
+  <nav
     style={{
       background: '#f4f4f4',
       paddingTop: '10px',
+      width: '15rem'
     }}
   >
     <ul
       style={{
         listStyle: 'none',
         display: 'flex',
-        justifyContent: 'space-evenly',
+        flexDirection: "column",
+        
       }}
     >
       <li>
@@ -22,7 +24,7 @@ const Menu = () => (
         <Link to="/page-2">About</Link>
       </li>
     </ul>
-  </div>
+  </nav>
 )
 
 export default Menu

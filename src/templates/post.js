@@ -18,6 +18,12 @@ class PostTemplate extends Component {
                 {post.acf !== null ?
                 <p dangerouslySetInnerHTML={{__html:post.acf.social }}></p>
                 : ''}
+                
+                {post.categories[0].name !== null ?
+                
+                <p dangerouslySetInnerHTML={{__html:post.categories[0].name }}></p>
+                : ''}
+               
             </div>
             </Layout>
         )
@@ -35,6 +41,13 @@ export const pageQuery = graphql`
             acf{
                 social
               }
+            categories {
+               
+                slug
+                name
+                
+                
+              }  
               featured_media{
                 localFile{
                     childImageSharp{

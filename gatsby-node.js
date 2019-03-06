@@ -36,10 +36,17 @@ const postsQuery = `
         acf{
             social
           }
+          categories  {
+            id
+            slug
+            name
+            description
+            
+          } 
           featured_media{
             localFile{
                 childImageSharp{
-                    resolutions(width:500, height: 200){
+                    resolutions(width:300, height: 375){
                         src
                         width
                         height
