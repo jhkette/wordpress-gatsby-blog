@@ -15,16 +15,12 @@ const transition = 'top 200ms ease-in-out, left 200ms ease-in-out'
 class Home extends Component {
   render() {
     const data = this.props.data
-
     return (
-      <Layout>
-     
-        <hr />
-        <h1>Posts</h1>
-        <FluidGrid className ="posts" styleStrategies={styleStrategies} transition={transition}>
+    <Layout>
+      <h1>Posts</h1>
+      <FluidGrid className ="posts" styleStrategies={styleStrategies} transition={transition}>
         {data.allWordpressPost.edges.map(({ node }) => (
           <div key={node.slug} className="homepost">
-            
             <Img className="bloglead" resolutions={node.featured_media.localFile.childImageSharp.resolutions} />
             <Link to={`/post/${node.slug}/`} css={{ textDecoration: `none` }}>
               <h3>{node.title}</h3>
@@ -42,11 +38,10 @@ class Home extends Component {
                 <h3>{node.title}</h3>
               </Link>
               <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              
-            </div>
-          ))}
-        </div>
-      </Layout>
+              </div>
+              ))}
+          </div>
+        </Layout>
     )
   }
 }
@@ -67,8 +62,15 @@ export const pageQuery = graphql`
         }
       }
     }
-    allWordpressPost(sort: { fields: [date], order: ASC  } )  {
-      edges {
+    allWordpressPost(
+      sort: { fields: [date], order: ASC  } 
+      limit: 4
+      
+      
+      ),   
+    
+    {
+      edges  {
         node {
           title
           excerpt
