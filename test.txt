@@ -1,0 +1,32 @@
+{ 
+ 
+  allWordpressPost(
+      filter: { acf: {social:{eq: "test"}}} 
+      limit: 4
+      ), 
+  {
+    edges {
+      node {
+        id  
+        slug
+        status
+        template
+        format
+        title
+        date
+        acf{
+            social
+          }
+          categories  {
+            id
+            slug
+            name
+            description
+            
+          } 
+         
+          
+      }
+    }
+  }
+}

@@ -63,13 +63,10 @@ export const pageQuery = graphql`
       }
     }
     allWordpressPost(
-      sort: { fields: [date], order: ASC  } 
+      filter: { acf: {social:{eq: ""}}} 
       limit: 4
-      
-      
-      ),   
-    
-    {
+      ), 
+  {
       edges  {
         node {
           title
