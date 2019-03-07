@@ -1,9 +1,15 @@
 * { margin: 0; padding: 0 }
 
 html {
-  font-family: sans-serif;
+  font-family:  Helvetica, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+ 
+}
+html {
+  font: 112.5%/1.45em georgia, serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
 }
 body {
   margin: 0;
@@ -55,6 +61,7 @@ header{
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 2rem 1rem;
   min-height: 100vh;
   border: 1px red;
 }
@@ -69,6 +76,11 @@ header{
   
 }
 
+
+.homepost{
+  width: 200px;
+}
+
 .posts{
  width: 90%;
  border: 1px red;
@@ -80,6 +92,12 @@ header{
   
 }
 
+.lead-postimage{
+  img{
+    width: 100%;
+  }
+ 
+}
 
 
 
@@ -245,11 +263,7 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
-html {
-  font: 112.5%/1.45em georgia, serif;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
+
 * {
   box-sizing: inherit;
 }

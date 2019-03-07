@@ -27,7 +27,7 @@ const IndexPage = ({ data, pathContext }) => {
 
     return (
       <Layout>
-         <h4>{pageCount} Pages</h4>
+         <h2>All Posts</h2>
          <div>
            <FluidGrid className ="posts" styleStrategies={styleStrategies} transition={transition}>
              {group.map(({ node }) => (

@@ -13,7 +13,7 @@ class PostTemplate extends Component {
             <Layout>
             <div>
                 <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-                <Img resolutions ={resolutions} />
+                <Img resolutions ={resolutions} className="lead-postimage"/>
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
                 {post.acf !== null ?
                 <p dangerouslySetInnerHTML={{__html:post.acf.social }}></p>
@@ -51,7 +51,7 @@ export const pageQuery = graphql`
               featured_media{
                 localFile{
                     childImageSharp{
-                        resolutions(width:500, height: 300){
+                        resolutions(width: 700, height: 300){
                             src
                             width
                             height
