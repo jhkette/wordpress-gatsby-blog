@@ -1,17 +1,19 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Menu from "./menu"
+import Menu from "./navigation/menu"
+import navHeader from "./navigation/navheader"
+
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      
+
       marginBottom: `1.45rem`,
     }}
   >
-  <div className="mobileheader">
-  <nav className ="mobilenav"></nav>
+    <div className="mobileheader">
+      <button className="mobilenav"></button>
       <h1>
         <Link
           to="/"
@@ -21,10 +23,11 @@ const Header = ({ siteTitle }) => (
           }}
         >
           {siteTitle}
+          {console.log('this is the' + siteTitle)}
         </Link>
       </h1>
-  </div>   
-   
+    </div>
+
     <Menu />
   </header>
 )

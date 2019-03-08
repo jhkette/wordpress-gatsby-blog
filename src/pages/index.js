@@ -63,7 +63,6 @@ export const pageQuery = graphql`
       }
     }
     allWordpressPost(
-      limit: 6
       
       filter: { acf: {social:{eq: ""}}} 
      
