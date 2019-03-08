@@ -5,7 +5,7 @@ import Menu from "./navigation/menu"
 import navHeader from "./navigation/navheader"
 
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }, props) => (
   <header
     style={{
 
@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => (
     }}
   >
     <div className="mobileheader">
-      <button className="mobilenav"></button>
+      <button className="mobilenav" onClick ={props.sidenav}></button>
       <h1>
         <Link
           to="/"

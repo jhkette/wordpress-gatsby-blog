@@ -46,16 +46,20 @@ summary {
 .content {
   width: 100%;
   background-color: #f4f4f4;
+  border: 1px solid red;
 
 }
 
 main {
   width: 75%;
+  text-align: center;
+  border: 1px solid red;
 
 }
 
 header {
   width: 15rem;
+  border: 1px solid red;
 
 
 }
@@ -101,7 +105,9 @@ header {
   width: min-content;
   background-color: white;
   box-shadow: 1px 1px 5px #949494;
-  display: block;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 2rem;
 
   h3 {
     padding: .4rem 1rem;
@@ -176,7 +182,6 @@ header {
       background-repeat: no-repeat;
       background-size: contain;
       color: gray;
-
     }
   }  
 
@@ -187,8 +192,6 @@ header {
     border: 0;
     padding: 0;
     cursor: pointer;
-    
-
   }
 }
 

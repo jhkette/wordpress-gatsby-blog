@@ -13,10 +13,16 @@ const styleStrategies = [
 const transition = 'top 200ms ease-in-out, left 200ms ease-in-out'
 
 class Home extends Component {
+  sidenav= () => {
+    console.log('hello')
+  }
+
+
+
   render() {
     const data = this.props.data
     return (
-    <Layout>
+    <Layout onClick = {this.sidenav}>
       <h1>Projects</h1>
       <FluidGrid className ="posts" styleStrategies={styleStrategies} transition={transition}>
         {data.allWordpressPost.edges.map(({ node }) => (

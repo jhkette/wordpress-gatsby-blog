@@ -14,7 +14,12 @@ import Header from "./header"
 import "./layout.scss"
 
 
-const Layout = ({ children }) => (
+
+
+const Layout = ({ children }, props) => (
+  
+ 
+
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -25,11 +30,16 @@ const Layout = ({ children }) => (
         }
       }
     `}
+    
     render={data => (
       <div className = "content">
       
         <div className = "flex-main">
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} 
+        onClick = {props.sidenav}
+        
+        
+        />
       
         
           <main>{children}</main>
@@ -39,6 +49,7 @@ const Layout = ({ children }) => (
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
+          
           </div>
       
      
