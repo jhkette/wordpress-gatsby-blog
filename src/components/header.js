@@ -10,8 +10,9 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`,
     }}
   >
-   
-      <h1 style={{ margin: 0 }}>
+  <div className="mobileheader">
+  <nav className ="mobilenav"></nav>
+      <h1>
         <Link
           to="/"
           style={{
@@ -22,6 +23,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+  </div>   
    
     <Menu />
   </header>

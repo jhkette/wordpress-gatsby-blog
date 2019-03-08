@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 const styleStrategies = [
   { mediaQuery: '(max-width: 719.9px)', style: { numberOfColumns: 1, gutterHeight: 5, gutterWidth: 0 } },
   { mediaQuery: '(min-width: 720px) and (max-width: 1023.9px)', style: { numberOfColumns: 2, gutterHeight: 15, gutterWidth: 15 } },
-  { mediaQuery: '(min-width: 1024px)', style: { numberOfColumns: 3, gutterHeight: 30, gutterWidth: 30 } }
+  { mediaQuery: '(min-width: 1024px)', style: { numberOfColumns: 2, gutterHeight: 30, gutterWidth: 30 } }
 ]
 const transition = 'top 200ms ease-in-out, left 200ms ease-in-out'
 
@@ -17,11 +17,11 @@ class Home extends Component {
     const data = this.props.data
     return (
     <Layout>
-      <h1>Posts</h1>
+      <h1>Projects</h1>
       <FluidGrid className ="posts" styleStrategies={styleStrategies} transition={transition}>
         {data.allWordpressPost.edges.map(({ node }) => (
-          <div key={node.slug} className="homepost">
-            <Img className="bloglead" resolutions={node.featured_media.localFile.childImageSharp.resolutions} />
+          <div key={node.slug} className="homepost" >
+            <Img className="bloglead" fluid={node.featured_media.localFile.childImageSharp.fluid} />
             <Link to={`/post/${node.slug}/`} css={{ textDecoration: `none` }}>
               <h3>{node.title}</h3>
             </Link>
@@ -63,8 +63,10 @@ export const pageQuery = graphql`
       }
     }
     allWordpressPost(
+      limit: 6
+      
       filter: { acf: {social:{eq: ""}}} 
-      limit: 4
+     
       ), 
   {
       edges  {
@@ -75,12 +77,11 @@ export const pageQuery = graphql`
           featured_media{
             localFile{
                 childImageSharp{
-                    resolutions(width:200, height: 300){
-                        src
-                        width
-                        height
-                    }
+                   fluid(maxWidth: 600, maxHeight: 600){
+                     ...GatsbyImageSharpFluid
+                   }
                 }
+                
             }
         }
          

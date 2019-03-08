@@ -16,6 +16,7 @@ const Menu = () => (
         flexDirection: "column",
         
       }}
+      className ="mainnav"
     >
       <li>
         <Link to="/">Home</Link>
